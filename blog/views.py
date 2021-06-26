@@ -17,3 +17,6 @@ def topics(request):
 
 def posts(request):
     return render(request, 'blog/posts.html')
+
+def new_post(request):
+    return render(request, 'blog/new_post.html')

@@ -1,24 +1,22 @@
 {% extends 'blog/base.html' %}
-
+<!--  -->
 {% block content %}
 
 <div class="container">
     <div class="pb-2 mt-4 mb-2 text-right">
         <p>(Postagens atualizadas até {{ datetime_now }})</p>
     </div>
-    
-    
+
+
     {% for post in posts %}
-    <h5>Título: {{ post }}</h5>    
+    <h5>Título: {{ post }}</h5>
     <h6>Postagem em: {{post.date_added}}</h6>
     <p class="text-justify"> {{ post.text }} </p>
-    <hr class="mt-2 mb-4"/>
-
-    {% empty %}            
+    <hr class="mt-2 mb-4" /> {% empty %}
     <div class='bg-light p-1 text-center'>
         <h4>Nenhum assunto cadastrado ainda</h4>
     </div>
     {% endfor %}
-    
+
 </div>
-    {% endblock content %}
+{% endblock content %}
