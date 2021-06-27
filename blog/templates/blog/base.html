@@ -2,27 +2,24 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% bootstrap_css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% bootstrap_css %}
+    <script src="https://kit.fontawesome.com/96c7868b89.js" crossorigin="anonymous"></script>
     <title>Blog - Aprendendo Django</title>
 </head>
+
 <body>
     <div class="container">
         <div class="row mt-2">
             <div class="col-md-5"></div>
             <div class="col-md-7">
-                <div class="btn btn-outline-primary btn-sm">
-                    <a href="{% url 'new_post' %}">Nova postagem</a>
-                </div>
-                <div class="btn btn-outline-primary btn-sm">
-                    <a href="{% url 'topics' %}">Assuntos</a>
-                </div>
-                <div class="btn btn-outline-primary btn-sm">
-                    <a href="{% url 'posts' %}">Postagens</a>
-                </div>
+                <button class="btn btn-outline-primary btn-sm">
+                    <a href="{% url 'new_post' %}">Nova postagem  <i class="fas fa-plus-circle"></i></a>
+                    <i class="bi bi-plus"></i>
+                </button>
                 <button class="btn btn-outline-primary btn-sm">
                     <a href="{% url 'index' %}">Home</a>
                 </button>
@@ -30,15 +27,13 @@
         </div>
     </div>
     <div class="container">
-        <div class="pb-2 mt-4 mb-2 border-bottom">
+        <div class="pb-2 mt-5 mb-2 border-bottom">
             <a href="{% url 'index' %}">
-                <h1>Blog - Aprendendo Django</h1>
+                <h1 class="text-center">Aprendendo Django</h1>
             </a>
         </div>
     </div>
-    {% block content %}
-    {% endblock content %}
-
-    {% bootstrap_javascript jquery='full' %}
+    {% block content %} {% endblock content %} {% bootstrap_javascript jquery='full' %}
 </body>
+
 </html>

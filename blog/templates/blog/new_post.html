@@ -1,9 +1,15 @@
 {% extends 'blog/base.html' %}
-
+<!--  -->
 {% block content %}
 
 <div class="container">
-    <h2>New Post</h2>
-</div>    
+    <h2>Adicionar Postagem</h2>
+    <form action="{% url 'new_post' %}" method="POST">
+        {% csrf_token %}
+        <!--  -->
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Adicionar</button>
+    </form>
+</div>
 
 {% endblock content %}

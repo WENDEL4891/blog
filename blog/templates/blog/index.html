@@ -4,14 +4,21 @@
 
 <div class="container">
     <div class="pb-2 mt-4 mb-2 text-right">
-        <p>(Postagens atualizadas até {{ datetime_now }})</p>
+        <p class="text-info">(Postagens atualizadas até {{ datetime_now }})</p>
     </div>
 
 
-    {% for post in posts %}
-    <h5>Título: {{ post }}</h5>
-    <h6>Postagem em: {{post.date_added}}</h6>
-    <p class="text-justify"> {{ post.text }} </p>
+    {% for shorted_post in shorted_posts %}
+    <h4>
+        <a class="text-success" href="{% url 'post' shorted_post.id %}">
+            {{ shorted_post.title }}
+        </a>
+    </h4>
+    <h6 class="text-info">Postado em: {{shorted_post.date_added}}</h6>
+    <p class="text-justify">
+        {{ shorted_post.text }} <br>
+        <a href="{% url 'post' shorted_post.id %}">( Continuar lendo ... )</a>
+    </p>
     <hr class="mt-2 mb-4" /> {% empty %}
     <div class='bg-light p-1 text-center'>
         <h4>Nenhum assunto cadastrado ainda</h4>

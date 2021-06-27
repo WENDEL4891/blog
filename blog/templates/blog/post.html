@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+<!--  -->
+{% block content %}
+
+<div class="container">
+    <h2>{{ post }}</h2>
+    <h6 class="text-info">Postado em {{ post.date_added }}</h6>
+    <p class="text-justify">{{ post.text }}</p>
+    <div class="d-flex flex-row justify-content-around">
+        <a class="btn btn-warning" href="{% url 'edit_post' post.id %}">
+            Editar postagem
+        </a>
+    </div>
+</div>
+
+{% endblock content %}
